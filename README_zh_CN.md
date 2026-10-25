@@ -1,43 +1,99 @@
-# MiSans 字体
+<div align="center">
 
-[English](README.md) | 简体中文
+<img src="assets/misans-wordmark.png" alt="MiSans" width="280">
 
-为思源笔记提供内置 MiSans 常规和粗体文字字体。启用后应用于界面和编辑器，停用后移除插件样式。字体随插件打包，运行时无需从外部网站下载。
+# MiSans for SiYuan
 
-1.0.0 版本移除 Twemoji：不再附带表情字体，也不覆盖思源的 Emoji 字体设置，表情按思源或系统原有方式显示。为保持已安装插件的更新兼容性，仓库及插件包名仍沿用原名称。
+让思源笔记的界面与正文，使用 MiSans。
 
-## 环境与使用
+![Version](https://img.shields.io/badge/version-1.0.0-171717?style=flat-square)
+![SiYuan](https://img.shields.io/badge/SiYuan-%E2%89%A5%203.8.4-2563eb?style=flat-square)
+![Code license](https://img.shields.io/badge/code-MIT-16a34a?style=flat-square)
 
-- 思源笔记 3.8.4 及以上；支持桌面端、移动端及浏览器前端。
-- 当前未提交思源集市。手动安装时，将 `package.zip` 解压到工作空间的 `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/`，确保 `plugin.json` 直接位于该目录下，再从集市的「已下载」页面启用。
-- 使用时建议停用其他会覆盖全局文字字体的插件、CSS 片段。主题和自定义字体设置也可能影响显示效果。
-- 仅内置常规和粗体；斜体由浏览器合成。未覆盖的字符依赖系统后备字体，不保证所有繁体字或语言字形齐全。
-- PDF 导出沿用原插件的 `snippetCSS` 机制；实际字体嵌入效果需在目标客户端验证。
+[English](README.md) · **简体中文**
 
-## 新版思源兼容
+[**下载安装包**](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) · [MiSans 官网](https://hyperos.mi.com/font/zh/) · [Issues](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/issues)
 
-- 适配独立的全局、编辑器字体栈，插件启用时 MiSans 优先；普通文字使用 400 字重，保留正文加粗和表格单元格的字重继承。代码字体和 Emoji 字体设置由思源管理。
-- 发布服务已声明样式与字体资源；仍需在思源中允许此插件用于发布服务。
-- 字体在后台预加载，不阻塞插件启动；样式请求超时或停用时取消加载。
-- 对照思源 3.8.8 和上游插件 2.3.1 的文字字体适配实现；客户端显示及 PDF 导出仍需实测。
+</div>
 
-## 字体来源与许可
+---
 
-- **MiSans**：内置 `MiSans-Regular.woff` 和 `MiSans-Bold.woff`；字体内部版本均为 **4.009**。版权归北京小米移动软件有限公司等权利人所有，设计信息见字体内部记录（小米、汉仪）。官方资源：[MiSans](https://hyperos.mi.com/font/zh/)、[官方字体仓库](https://github.com/xiaomi-fonts/MiSans)。保留现有 WOFF 文件，未修改字形；原始下载包与转换过程未在仓库中记录，正式分发前需补齐与该版本对应的官方许可文件及来源记录。
-- 插件代码使用 [MIT License](LICENSE)，字体资源不适用代码的 MIT 许可。详见 [第三方声明](THIRD_PARTY_NOTICES.md)。本项目由社区维护。
+一个轻量的社区字体插件。内置 MiSans 常规与粗体，启用即生效，停用即恢复思源原有样式。
+
+> 本项目由 Chen017 维护，基于 TCOTC 的鸿蒙字体插件修改，与小米、汉仪及思源官方无隶属或背书关系。
+
+## 功能
+
+| 功能 | 说明 |
+| --- | --- |
+| 界面与正文 | MiSans 优先用于全局界面和编辑器文字 |
+| 常规与粗体 | 内置两个字重，普通文字从 400 开始，保留正文加粗与表头字重继承 |
+| 本地加载 | 字体随安装包提供，无需从外部字体网站加载 |
+| 新版思源适配 | 适配独立的全局、编辑器字体栈，声明发布服务资源 |
+| 快速启停 | 后台预加载字体，停用时移除样式并取消待完成的样式请求 |
+
+不附带 Twemoji，不修改思源的 Emoji 或代码字体变量。仅提供常规和粗体，斜体由浏览器合成；字体未覆盖的字符使用系统后备字体。
+
+## 安装
+
+**要求：思源笔记 3.8.4 或以上。** 当前未上架思源集市。
+
+1. 从 [Releases](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) 下载 **`package.zip`**，不要下载 GitHub 自动生成的 Source code 压缩包。
+2. 将安装包解压到工作空间的以下位置：
+
+   ```text
+   data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/
+   ├── plugin.json
+   ├── index.js
+   ├── style.css
+   ├── MiSans-Regular.woff
+   └── MiSans-Bold.woff
+   ```
+
+3. 在思源「设置 → 集市 → 已下载 → 插件」中启用。必要时重启思源以刷新插件列表。
+
+更新时建议先停用插件，备份旧目录后替换文件，再重新启用。若从旧版升级，请删除旧目录中的 `Twemoji/` 文件夹；新版安装包不再包含它。
+
+<details>
+<summary>为什么目录名里还有 Twemoji？</summary>
+
+为保持已有安装的包名与仓库地址兼容，沿用历史名称。当前 1.0.0 版本只提供 MiSans 文字字体，不包含表情字体。
+
+</details>
+
+## 使用提示
+
+- **字体冲突：** 其他全局字体插件、主题或 CSS 片段可能影响效果，建议避免同时覆盖同一字体设置。
+- **发布服务：** 需要在思源中允许本插件用于发布服务，访客才能加载已声明的样式与字体资源。
+- **PDF 导出：** 保留上游 `snippetCSS` 导出机制；字体嵌入及实际显示仍需在目标客户端验证。
+- **兼容性验证：** 已对照思源 3.8.8、上游插件 2.3.1 源码检查，并通过 6 项生命周期回归测试。尚未完成所有桌面端、移动端和浏览器的视觉实测。
+
+## 开发与打包
+
+无需安装 npm 依赖，使用 Node.js 和 Python 3：
+
+```sh
+node --check index.js
+node --test tests/*.test.cjs
+python3 scripts/package.py
+```
+
+输出为仓库根目录的 `package.zip`。CI 会运行检查并上传构建产物。GitHub Release 与思源集市上架是两件事，本仓库不会自动提交集市申请。
+
+## 字体与许可
+
+本插件使用 **MiSans**。内置 `MiSans-Regular.woff`、`MiSans-Bold.woff` 的内部版本均为 **4.009**，字体版权归北京小米移动软件有限公司等权利人所有，内部记录署名小米与汉仪。现有 WOFF 文件保持不变；原始下载包和转换过程未在历史仓库中保存。
+
+- [MiSans 官方网站](https://hyperos.mi.com/font/zh/) · [官方字体仓库](https://github.com/xiaomi-fonts/MiSans)
+- [MiSans 字体知识产权许可协议](https://hyperos.mi.com/font-download/MiSans字体知识产权许可协议.pdf)
+- 插件代码采用 [MIT License](LICENSE)；字体遵循其独立许可，详见 [第三方声明](THIRD_PARTY_NOTICES.md)。
 
 ## 致谢
 
-本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**（鸿蒙黑体和 Twemoji）修改，将文本字体替换为 MiSans，移除 Twemoji 功能，并沿用其字体注入和 PDF 导出支持思路。感谢 TCOTC 的原始实现，保留其 MIT 版权声明。
+本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)** 修改，替换文字字体、移除 Twemoji，并参考其新版思源字体栈、字重继承及 PDF 导出适配。保留原作者 Jeffrey Chen 的 MIT 版权声明。
 
-同时感谢原插件参考的：
+同时感谢：
 
 - [zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)
-- [思源笔记手机端和电脑端使用同一字体 - 链滴](https://ld246.com/article/1705399357823)
+- [思源笔记手机端和电脑端使用同一字体](https://ld246.com/article/1705399357823)
 - [思源官方插件示例与开发规范](https://github.com/siyuan-note/plugin-sample)
-
-## 打包与后续发布
-
-运行 `python3 scripts/package.py` 生成根目录可直接安装的 `package.zip`。GitHub Actions 在推送、PR 或手动运行时检查并上传构建产物，**不会自动创建 Release 或提交集市**。
-
-正式发布前补齐上述 MiSans 授权材料，并实测桌面端、移动端、浏览器和 PDF 导出。然后创建与 `plugin.json` 版本一致的 GitHub Release 并附上 `package.zip`。首次上架还需按[官方规范](https://github.com/siyuan-note/bazaar#submitting-a-bazaar-package)单独提交集市申请；本次不执行。

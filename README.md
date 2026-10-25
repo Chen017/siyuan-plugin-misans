@@ -1,43 +1,89 @@
-# MiSans
+<div align="center">
 
-English | [简体中文](README_zh_CN.md)
+<img src="assets/misans-wordmark.png" alt="MiSans" width="280">
 
-Bundled MiSans Regular and Bold text fonts for SiYuan. Enabling the plugin applies fonts to the interface and editor; disabling it removes its styles. Font loading requires no external network requests.
+# MiSans for SiYuan
 
-In version 1.0.0, Twemoji is removed: no emoji font is bundled and SiYuan's emoji font setting is left unchanged. Emoji use the existing SiYuan or system rendering. The repository and package name are retained for update compatibility.
+MiSans typography for your SiYuan interface and notes.
 
-## Requirements and installation
+![Version](https://img.shields.io/badge/version-1.0.0-171717?style=flat-square)
+![SiYuan](https://img.shields.io/badge/SiYuan-%E2%89%A5%203.8.4-2563eb?style=flat-square)
+![Code license](https://img.shields.io/badge/code-MIT-16a34a?style=flat-square)
 
-- SiYuan 3.8.4 or later; desktop, mobile and browser frontends.
-- This plugin has not been submitted to the marketplace. For manual installation, extract `package.zip` into `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/` in your workspace, with `plugin.json` directly inside that directory. Enable it from the marketplace's Downloaded tab.
-- Other global text font plugins, CSS snippets, themes and font settings may conflict.
-- Only Regular and Bold are bundled; italics are synthesized by the browser. Missing glyphs use system fallback fonts; full Traditional Chinese or other language coverage is not guaranteed.
-- PDF export retains the upstream `snippetCSS` mechanism. Font embedding needs verification in target clients.
+**English** · [简体中文](README_zh_CN.md)
 
-## Compatibility with current SiYuan
+[**Download package**](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) · [MiSans website](https://hyperos.mi.com/font/zh/) · [Issues](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/issues)
 
-- Overrides the separate global/editor font stacks to prioritize MiSans. Normal text starts at weight 400; bold text and table cell weight inheritance remain intact. SiYuan retains control of code and emoji font settings.
-- Stylesheet and font resources are declared for publishing. Enable this plugin in the publishing service to make them available to visitors.
-- Fonts preload in the background without blocking startup; stylesheet loading is canceled on timeout or disablement.
-- Reviewed against SiYuan 3.8.8 and upstream plugin 2.3.1. Client rendering and PDF output still require manual verification.
+</div>
+
+---
+
+A lightweight community plugin with bundled MiSans Regular and Bold. Enable it to apply the fonts; disable it to remove the plugin styles.
+
+> Maintained by Chen017 and adapted from TCOTC's HarmonyOS font plugin. This project is not affiliated with or endorsed by Xiaomi, Hanyi or SiYuan.
+
+## Features
+
+| Feature | Details |
+| --- | --- |
+| Interface and notes | Prioritizes MiSans in the global and editor text font stacks |
+| Regular and Bold | Normal text starts at weight 400; semantic bold and table cell weight inheritance are preserved |
+| Local fonts | Fonts are bundled, with no requests to external font services |
+| Current SiYuan support | Handles separate global/editor font stacks and declares publishing resources |
+| Clean lifecycle | Background font preloading; stylesheet requests are canceled on timeout or disablement |
+
+No Twemoji is bundled. SiYuan retains control of emoji and code font variables. Italics are browser-synthesized; missing glyphs use system fallback fonts.
+
+## Installation
+
+**Requires SiYuan 3.8.4 or later.** The plugin is not listed on the SiYuan marketplace.
+
+1. Download **`package.zip`** from [Releases](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest), rather than GitHub's generated Source code archives.
+2. Extract it into your workspace's `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/` directory. Make sure `plugin.json` is directly inside that directory.
+3. Enable the plugin under Settings → Marketplace → Downloaded → Plugins. Restart SiYuan if the plugin list needs refreshing.
+
+Before updating, disable the plugin and back up its old directory, replace the files, then enable it again. When upgrading from an older version, delete the old `Twemoji/` folder; it is no longer included.
+
+<details>
+<summary>Why does the directory name still contain Twemoji?</summary>
+
+The historical package and repository names are retained for existing installations. Version 1.0.0 provides MiSans text fonts only.
+
+</details>
+
+## Usage notes
+
+- Other global font plugins, themes or CSS snippets may conflict.
+- For published pages, allow this plugin in SiYuan's publishing service so visitors can load the declared stylesheet and fonts.
+- The upstream `snippetCSS` PDF export mechanism is retained. Actual font embedding and rendering need verification in target clients.
+- Reviewed against SiYuan 3.8.8 and upstream plugin 2.3.1, with six lifecycle regression tests passing. Visual testing across all desktop, mobile and browser clients is still pending.
+
+## Development
+
+No npm dependencies are required. Use Node.js and Python 3:
+
+```sh
+node --check index.js
+node --test tests/*.test.cjs
+python3 scripts/package.py
+```
+
+The output is `package.zip` at the repository root. CI validates the plugin and uploads a build artifact. GitHub Releases do not automatically submit the plugin to the SiYuan marketplace.
 
 ## Fonts and licensing
 
-- **MiSans**: `MiSans-Regular.woff` and `MiSans-Bold.woff`, both internally identified as **4.009**. Copyright belongs to Beijing Xiaomi Mobile Software Co., Ltd. and the respective rights holders; the name tables credit Xiaomi and Hanyi. See the [official site](https://hyperos.mi.com/font/zh/) and [official repository](https://github.com/xiaomi-fonts/MiSans). Existing WOFF files are retained without glyph changes. The original download archive and conversion history are not recorded; supply the official license matching these files and provenance before a formal release.
-- Plugin code uses the [MIT License](LICENSE). Bundled fonts have separate terms; see [third-party notices](THIRD_PARTY_NOTICES.md). This is a community project.
+This plugin uses **MiSans**. Both bundled WOFF files internally report version **4.009**. Copyright belongs to Beijing Xiaomi Mobile Software Co., Ltd. and the respective rights holders; the font name tables credit Xiaomi and Hanyi. Existing WOFF files are unchanged. The historical repository did not preserve the original download archive or conversion history.
+
+- [Official site](https://hyperos.mi.com/font/zh/) · [Official repository](https://github.com/xiaomi-fonts/MiSans)
+- [MiSans Font Intellectual Property License Agreement](https://hyperos.mi.com/font-download/MiSans字体知识产权许可协议.pdf)
+- Plugin code uses the [MIT License](LICENSE). Fonts have separate terms; see [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Acknowledgments
 
-Based on **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing HarmonyOS Sans with MiSans, removing Twemoji functionality and retaining its font injection and PDF export approach. Thanks to TCOTC for the original implementation; the original MIT copyright notice is preserved.
+Adapted from **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing the text fonts and removing Twemoji. The current font stack, weight inheritance and PDF export support draw on upstream work. Jeffrey Chen's original MIT copyright notice is preserved.
 
-Also thanks to the upstream references:
+Also thanks to:
 
 - [zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)
-- [Using the same font on mobile and desktop SiYuan (Chinese)](https://ld246.com/article/1705399357823)
+- [Using the same font on mobile and desktop SiYuan](https://ld246.com/article/1705399357823)
 - [Official SiYuan plugin sample and guidelines](https://github.com/siyuan-note/plugin-sample)
-
-## Packaging and future release
-
-Run `python3 scripts/package.py` to create an installable `package.zip`. GitHub Actions validates and uploads a build artifact on pushes, pull requests and manual runs. It does **not** create releases or submit marketplace applications.
-
-Before releasing, supply the MiSans licensing materials above and verify desktop, mobile, browser and PDF rendering. Create a GitHub Release matching the manifest version and attach `package.zip`. A first marketplace listing requires a separate [bazaar submission](https://github.com/siyuan-note/bazaar#submitting-a-bazaar-package); none is made in this update.

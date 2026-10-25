@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "remove_releases": ["v1.2.4"]
+}

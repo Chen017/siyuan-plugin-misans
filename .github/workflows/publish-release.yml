@@ -1,0 +1,30 @@
+name: Publish requested release
+on:
+  push:
+    branches: [main]
+    paths: ['.release/request.json']
+permissions:
+  contents: write
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate and build
+        run: |
+          node --check index.js
+          node --test tests/*.test.cjs
+          python3 scripts/package.py
+      - name: Publish package and remove superseded releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish_release.py
