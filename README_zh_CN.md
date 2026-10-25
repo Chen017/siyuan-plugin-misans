@@ -12,7 +12,7 @@
 
 [English](README.md) · **简体中文**
 
-[**下载安装包**](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) · [MiSans 官网](https://hyperos.mi.com/font/zh/) · [Issues](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/issues)
+[**下载安装包**](https://github.com/Chen017/siyuan-plugin-misans/releases/latest) · [MiSans 官网](https://hyperos.mi.com/font/zh/)
 
 </div>
 
@@ -21,6 +21,8 @@
 一个轻量的社区字体插件。内置 MiSans 常规与粗体，启用即生效，停用即恢复思源原有样式。
 
 > 本项目由 Chen017 维护，基于 TCOTC 的鸿蒙字体插件修改，与小米、汉仪及思源官方无隶属或背书关系。
+
+![MiSans](preview.png)
 
 ## 功能
 
@@ -32,17 +34,17 @@
 | 新版思源适配 | 适配独立的全局、编辑器字体栈，声明发布服务资源 |
 | 快速启停 | 后台预加载字体，停用时移除样式并取消待完成的样式请求 |
 
-不附带 Twemoji，不修改思源的 Emoji 或代码字体变量。仅提供常规和粗体，斜体由浏览器合成；字体未覆盖的字符使用系统后备字体。
+不修改思源的 Emoji 或代码字体变量。仅提供常规和粗体，斜体由浏览器合成；字体未覆盖的字符使用系统后备字体。
 
 ## 安装
 
 **要求：思源笔记 3.8.4 或以上。** 当前未上架思源集市。
 
-1. 从 [Releases](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) 下载 **`package.zip`**，不要下载 GitHub 自动生成的 Source code 压缩包。
+1. 从 [Releases](https://github.com/Chen017/siyuan-plugin-misans/releases/latest) 下载 **`package.zip`**，不要下载 GitHub 自动生成的 Source code 压缩包。
 2. 将安装包解压到工作空间的以下位置：
 
    ```text
-   data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/
+   data/plugins/siyuan-plugin-misans/
    ├── plugin.json
    ├── index.js
    ├── style.css
@@ -52,14 +54,7 @@
 
 3. 在思源「设置 → 集市 → 已下载 → 插件」中启用。必要时重启思源以刷新插件列表。
 
-更新时建议先停用插件，备份旧目录后替换文件，再重新启用。若从旧版升级，请删除旧目录中的 `Twemoji/` 文件夹；新版安装包不再包含它。
-
-<details>
-<summary>为什么目录名里还有 Twemoji？</summary>
-
-为保持已有安装的包名与仓库地址兼容，沿用历史名称。当前 1.0.0 版本只提供 MiSans 文字字体，不包含表情字体。
-
-</details>
+更新时先停用插件并备份旧目录。若从旧包名版本升级，请移除旧插件目录，再将本安装包解压到 `data/plugins/siyuan-plugin-misans/`，避免同时启用两份字体插件。
 
 ## 使用提示
 
@@ -90,7 +85,7 @@ python3 scripts/package.py
 
 ## 致谢
 
-本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)** 修改，替换文字字体、移除 Twemoji，并参考其新版思源字体栈、字重继承及 PDF 导出适配。保留原作者 Jeffrey Chen 的 MIT 版权声明。
+本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)** 修改，替换文字字体，并参考其新版思源字体栈、字重继承及 PDF 导出适配。保留原作者 Jeffrey Chen 的 MIT 版权声明。
 
 同时感谢：
 

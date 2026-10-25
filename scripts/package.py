@@ -6,7 +6,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 manifest = json.loads((ROOT / 'plugin.json').read_text(encoding='utf-8'))
-assert manifest['name'] == 'siyuan-ttf-MiSans_SC-and-Twemoji'
+assert manifest['name'] == 'siyuan-plugin-misans'
 assert manifest['url'] == f"https://github.com/Chen017/{manifest['name']}"
 assert re.fullmatch(r'\d+\.\d+\.\d+', manifest['version']), 'Invalid version'
 for key in ('displayName', 'description', 'readme'):

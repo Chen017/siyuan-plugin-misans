@@ -1,7 +1,7 @@
 {
-  "name": "siyuan-ttf-MiSans_SC-and-Twemoji",
+  "name": "siyuan-plugin-misans",
   "author": "Chen017",
-  "url": "https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji",
+  "url": "https://github.com/Chen017/siyuan-plugin-misans",
   "version": "1.0.0",
   "minAppVersion": "3.8.4",
   "backends": [

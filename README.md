@@ -12,7 +12,7 @@ MiSans typography for your SiYuan interface and notes.
 
 **English** · [简体中文](README_zh_CN.md)
 
-[**Download package**](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest) · [MiSans website](https://hyperos.mi.com/font/zh/) · [Issues](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/issues)
+[**Download package**](https://github.com/Chen017/siyuan-plugin-misans/releases/latest) · [MiSans website](https://hyperos.mi.com/font/zh/)
 
 </div>
 
@@ -21,6 +21,8 @@ MiSans typography for your SiYuan interface and notes.
 A lightweight community plugin with bundled MiSans Regular and Bold. Enable it to apply the fonts; disable it to remove the plugin styles.
 
 > Maintained by Chen017 and adapted from TCOTC's HarmonyOS font plugin. This project is not affiliated with or endorsed by Xiaomi, Hanyi or SiYuan.
+
+![MiSans](preview.png)
 
 ## Features
 
@@ -32,24 +34,17 @@ A lightweight community plugin with bundled MiSans Regular and Bold. Enable it t
 | Current SiYuan support | Handles separate global/editor font stacks and declares publishing resources |
 | Clean lifecycle | Background font preloading; stylesheet requests are canceled on timeout or disablement |
 
-No Twemoji is bundled. SiYuan retains control of emoji and code font variables. Italics are browser-synthesized; missing glyphs use system fallback fonts.
+SiYuan retains control of emoji and code font variables. Italics are browser-synthesized; missing glyphs use system fallback fonts.
 
 ## Installation
 
 **Requires SiYuan 3.8.4 or later.** The plugin is not listed on the SiYuan marketplace.
 
-1. Download **`package.zip`** from [Releases](https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji/releases/latest), rather than GitHub's generated Source code archives.
-2. Extract it into your workspace's `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/` directory. Make sure `plugin.json` is directly inside that directory.
+1. Download **`package.zip`** from [Releases](https://github.com/Chen017/siyuan-plugin-misans/releases/latest), rather than GitHub's generated Source code archives.
+2. Extract it into your workspace's `data/plugins/siyuan-plugin-misans/` directory. Make sure `plugin.json` is directly inside that directory.
 3. Enable the plugin under Settings → Marketplace → Downloaded → Plugins. Restart SiYuan if the plugin list needs refreshing.
 
-Before updating, disable the plugin and back up its old directory, replace the files, then enable it again. When upgrading from an older version, delete the old `Twemoji/` folder; it is no longer included.
-
-<details>
-<summary>Why does the directory name still contain Twemoji?</summary>
-
-The historical package and repository names are retained for existing installations. Version 1.0.0 provides MiSans text fonts only.
-
-</details>
+Before updating, disable the plugin and back up its old directory. When migrating from the former package name, remove the old plugin directory and extract this package to `data/plugins/siyuan-plugin-misans/` to avoid enabling two copies.
 
 ## Usage notes
 
@@ -80,7 +75,7 @@ This plugin uses **MiSans**. Both bundled WOFF files internally report version *
 
 ## Acknowledgments
 
-Adapted from **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing the text fonts and removing Twemoji. The current font stack, weight inheritance and PDF export support draw on upstream work. Jeffrey Chen's original MIT copyright notice is preserved.
+Adapted from **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing the text fonts. The current font stack, weight inheritance and PDF export support draw on upstream work. Jeffrey Chen's original MIT copyright notice is preserved.
 
 Also thanks to:
 

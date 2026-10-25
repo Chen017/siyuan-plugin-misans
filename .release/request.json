@@ -1,5 +1,7 @@
 {
   "version": "1.0.0",
   "tag": "v1.0.0",
-  "remove_releases": ["v1.2.4"]
+  "remove_releases": [],
+  "revision": 2,
+  "refresh_tag_from": "96aafdb0374cbdde4c426d4083c82509bfa7a4c6"
 }

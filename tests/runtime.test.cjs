@@ -29,7 +29,7 @@ function harness({ fetch, loadFont = () => Promise.resolve([]) } = {}) {
     };
     vm.runInNewContext(source, context);
     const plugin = new context.module.exports();
-    plugin.name = 'siyuan-ttf-MiSans_SC-and-Twemoji';
+    plugin.name = 'siyuan-plugin-misans';
     return { plugin, styles, timers, warnings };
 }
 

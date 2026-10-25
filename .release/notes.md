@@ -4,17 +4,17 @@
 
 ### 本版内容
 
-- 移除 Twemoji，保留思源和系统原有的表情显示。
+- 统一仓库与插件包名为 `siyuan-plugin-misans`，保留思源和系统原有的表情显示。
 - 适配新版思源的全局、编辑器字体栈与字重处理。
 - 修复字体预加载阻塞启动，增加样式请求超时与停用清理。
 - 声明发布服务所需的样式及字体资源。
-- 更新中英文 README，图标采用用户提供的官网截图中的英文 MiSans 字标。
+- 更新中英文 README，图标采用用户提供的官网截图中的英文 MiSans 字标，preview 改用用户提供的 MiSans SVG 素材。
 
 ### 安装
 
-下载下方 **package.zip**，解压至工作空间的 `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/`，确保 `plugin.json` 直接位于该目录下，然后在思源集市的「已下载」页面启用插件。不要将 Source code 压缩包作为安装包。
+下载下方 **package.zip**，解压至工作空间的 `data/plugins/siyuan-plugin-misans/`，确保 `plugin.json` 直接位于该目录下，然后在思源集市的「已下载」页面启用插件。不要将 Source code 压缩包作为安装包。
 
-从旧版升级时，先停用并备份旧目录，再替换文件；删除旧版遗留的 `Twemoji/` 文件夹。版本按社区独立版本线重置为 1.0.0。
+从旧版升级时，先停用并备份旧目录，再移除旧插件目录，安装到新的 `data/plugins/siyuan-plugin-misans/` 目录，避免两份插件同时生效。版本为 1.0.0。
 
 ### 验证与声明
 

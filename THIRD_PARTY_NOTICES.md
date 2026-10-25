@@ -26,3 +26,10 @@ user-provided screenshot of https://hyperos.mi.com/font/zh/ and resized for
 display. It remains the property of its respective rights holders and is not
 covered by this repository's MIT license. Its use identifies the bundled font;
 this community plugin is not affiliated with or endorsed by Xiaomi or Hanyi.
+
+## Preview artwork
+
+assets/misans-preview.svg was supplied by the user as home-grd-2.svg.
+preview.png is a rasterized, proportionally resized version of that artwork.
+The artwork remains subject to its original rights and is not relicensed
+under this repository's MIT license.
