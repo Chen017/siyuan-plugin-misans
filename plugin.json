@@ -16,8 +16,8 @@
     "zh-CN": "MiSans 字体"
   },
   "description": {
-    "default": "Use bundled MiSans Regular and Bold text fonts in SiYuan.",
-    "zh-CN": "为思源笔记提供内置 MiSans 常规和粗体文字字体。"
+    "default": "Bring Xiaomi’s clear, human-centric MiSans typeface to the SiYuan interface and editor, with bundled Regular and Bold fonts.",
+    "zh-CN": "将小米 MiSans 简约清晰、人文易读的字体带入思源笔记，为界面与正文提供常规和粗体字重。"
   },
   "readme": {
     "default": "README.md",

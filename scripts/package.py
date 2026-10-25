@@ -18,6 +18,7 @@ files = [
     'MiSans-Regular.woff', 'MiSans-Bold.woff',
     *manifest['readme'].values(), manifest['icon'], manifest['preview'],
 ]
+files += [str(path.relative_to(ROOT)) for path in sorted((ROOT / 'assets').iterdir()) if path.is_file()]
 for filename in files:
     assert (ROOT / filename).is_file(), f'Missing file: {filename}'
 for filename in manifest['publish']['resources']:

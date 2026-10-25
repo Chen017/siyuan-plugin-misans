@@ -2,93 +2,54 @@
 
 <img src="assets/misans-wordmark.png" alt="MiSans" width="280">
 
-# MiSans for SiYuan
+# MiSans
 
-让思源笔记的界面与正文，使用 MiSans。
+简约清晰，人文易读。
 
-![Version](https://img.shields.io/badge/version-1.0.0-171717?style=flat-square)
-![SiYuan](https://img.shields.io/badge/SiYuan-%E2%89%A5%203.8.4-2563eb?style=flat-square)
-![Code license](https://img.shields.io/badge/code-MIT-16a34a?style=flat-square)
-
-[English](README.md) · **简体中文**
-
-[**下载安装包**](https://github.com/Chen017/siyuan-plugin-misans/releases/latest) · [MiSans 官网](https://hyperos.mi.com/font/zh/)
+[English](README.md) · **简体中文** · [MiSans 官网](https://hyperos.mi.com/font/zh/)
 
 </div>
 
----
+## 关于 MiSans
 
-一个轻量的社区字体插件。内置 MiSans 常规与粗体，启用即生效，停用即恢复思源原有样式。
+MiSans 是小米推出的字体，以简约、清晰、人文、易读和统一的视觉风格为设计原则，让不同语言与文字之间的阅读体验更加协调。
 
-> 本项目由 Chen017 维护，基于 TCOTC 的鸿蒙字体插件修改，与小米、汉仪及思源官方无隶属或背书关系。
+本插件为思源笔记的界面与正文提供 **MiSans 常规和粗体**，让日常记录、阅读与写作拥有统一的字体体验。
 
-![MiSans](preview.png)
+[![MiSans 字体展示](assets/home-grd-1.svg)](assets/home-grd-1.png)
 
-## 功能
+## MiSans Global
 
-| 功能 | 说明 |
-| --- | --- |
-| 界面与正文 | MiSans 优先用于全局界面和编辑器文字 |
-| 常规与粗体 | 内置两个字重，普通文字从 400 开始，保留正文加粗与表头字重继承 |
-| 本地加载 | 字体随安装包提供，无需从外部字体网站加载 |
-| 新版思源适配 | 适配独立的全局、编辑器字体栈，声明发布服务资源 |
-| 快速启停 | 后台预加载字体，停用时移除样式并取消待完成的样式请求 |
+> 以下介绍摘自 MiSans 官方页面资料。
 
-不修改思源的 Emoji 或代码字体变量。仅提供常规和粗体，斜体由浏览器合成；字体未覆盖的字符使用系统后备字体。
+MiSans Global 是由小米主导，联合蒙纳字库、汉仪字库共同打造的全球语言字体定制项目。这是一个庞大的字体家族，涵盖 20 多种书写系统，支持 600 多种语言，字符数量超过 10 万个。作为 Xiaomi HyperOS 系统默认字体，我们以简约／清晰、人文／易读、统一的视觉风格为基本原则出发，构建多语言信息体验一致性，旨在帮助为 Xiaomi HyperOS 提供互联的通用体验。
 
-## 安装
+| 支持语言 | 字符数量 | 书写系统 |
+| :---: | :---: | :---: |
+| **600+** | **100,000+** | **20+** |
 
-**要求：思源笔记 3.8.4 或以上。** 当前未上架思源集市。
+以上为 MiSans Global 字体家族的整体介绍；本插件内置 MiSans 常规与粗体，并未包含整个 Global 字体家族。
 
-1. 从 [Releases](https://github.com/Chen017/siyuan-plugin-misans/releases/latest) 下载 **`package.zip`**，不要下载 GitHub 自动生成的 Source code 压缩包。
-2. 将安装包解压到工作空间的以下位置：
+[![MiSans 字形与排版展示](assets/misans-preview.svg)](preview.png)
 
-   ```text
-   data/plugins/siyuan-plugin-misans/
-   ├── plugin.json
-   ├── index.js
-   ├── style.css
-   ├── MiSans-Regular.woff
-   └── MiSans-Bold.woff
-   ```
+## 无一例外，所有字体都可变
 
-3. 在思源「设置 → 集市 → 已下载 → 插件」中启用。必要时重启思源以刷新插件列表。
+MiSans 官方字体家族提供可变字体，并提供 VF、OTF、TTF、WOFF、WOFF2 等格式，让不同语言、字重与排版场景拥有一致的设计风格。本插件使用其中的常规与粗体 WOFF 文件。
 
-更新时先停用插件并备份旧目录。若从旧包名版本升级，请移除旧插件目录，再将本安装包解压到 `data/plugins/siyuan-plugin-misans/`，避免同时启用两份字体插件。
+[![MiSans 字体细节](assets/home-grd-3.svg)](assets/home-grd-3.png)
 
-## 使用提示
+## Hello, World · 你好，世界
 
-- **字体冲突：** 其他全局字体插件、主题或 CSS 片段可能影响效果，建议避免同时覆盖同一字体设置。
-- **发布服务：** 需要在思源中允许本插件用于发布服务，访客才能加载已声明的样式与字体资源。
-- **PDF 导出：** 保留上游 `snippetCSS` 导出机制；字体嵌入及实际显示仍需在目标客户端验证。
-- **兼容性验证：** 已对照思源 3.8.8、上游插件 2.3.1 源码检查，并通过 6 项生命周期回归测试。尚未完成所有桌面端、移动端和浏览器的视觉实测。
+从拉丁字母、简体与繁体中文，到希腊文、西里尔文、阿拉伯文、藏文，以及泰文、老挝文、缅甸文、高棉文与多种印度文字，MiSans Global 将不同书写系统融入统一的字体设计之中。
 
-## 开发与打包
+文字，是一切美的开始。
 
-无需安装 npm 依赖，使用 Node.js 和 Python 3：
-
-```sh
-node --check index.js
-node --test tests/*.test.cjs
-python3 scripts/package.py
-```
-
-输出为仓库根目录的 `package.zip`。CI 会运行检查并上传构建产物。GitHub Release 与思源集市上架是两件事，本仓库不会自动提交集市申请。
-
-## 字体与许可
-
-本插件使用 **MiSans**。内置 `MiSans-Regular.woff`、`MiSans-Bold.woff` 的内部版本均为 **4.009**，字体版权归北京小米移动软件有限公司等权利人所有，内部记录署名小米与汉仪。现有 WOFF 文件保持不变；原始下载包和转换过程未在历史仓库中保存。
-
-- [MiSans 官方网站](https://hyperos.mi.com/font/zh/) · [官方字体仓库](https://github.com/xiaomi-fonts/MiSans)
-- [MiSans 字体知识产权许可协议](https://hyperos.mi.com/font-download/MiSans字体知识产权许可协议.pdf)
-- 插件代码采用 [MIT License](LICENSE)；字体遵循其独立许可，详见 [第三方声明](THIRD_PARTY_NOTICES.md)。
+[![MiSans 多语言展示](assets/home-grd-5.svg)](assets/home-grd-5.png)
 
 ## 致谢
 
-本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)** 修改，替换文字字体，并参考其新版思源字体栈、字重继承及 PDF 导出适配。保留原作者 Jeffrey Chen 的 MIT 版权声明。
+- 感谢 **小米、蒙纳字库与汉仪字库**带来的 MiSans Global 字体家族及官方展示资料。字体与展示素材的权利归原权利人所有。
+- 本插件基于 **[TCOTC 的鸿蒙字体插件](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)** 修改，并参考其字体栈、字重继承及 PDF 导出适配。保留原作者 Jeffrey Chen 的 MIT 版权声明。
+- 感谢 [zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)、[思源笔记手机端和电脑端使用同一字体](https://ld246.com/article/1705399357823)及[思源官方插件示例](https://github.com/siyuan-note/plugin-sample)提供的参考。
 
-同时感谢：
-
-- [zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)
-- [思源笔记手机端和电脑端使用同一字体](https://ld246.com/article/1705399357823)
-- [思源官方插件示例与开发规范](https://github.com/siyuan-note/plugin-sample)
+本插件由 Chen017 社区维护。字体遵循 [MiSans 官方许可协议](https://hyperos.mi.com/font-download/MiSans字体知识产权许可协议.pdf)，插件代码采用 [MIT License](LICENSE)。

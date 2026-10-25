@@ -33,3 +33,12 @@ assets/misans-preview.svg was supplied by the user as home-grd-2.svg.
 preview.png is a rasterized, proportionally resized version of that artwork.
 The artwork remains subject to its original rights and is not relicensed
 under this repository's MIT license.
+
+## Additional MiSans presentation materials
+
+assets/home-grd-1.svg, assets/home-grd-3.svg and assets/home-grd-5.svg were
+supplied by the user as official MiSans presentation materials, together
+with a screenshot of the official introduction. Matching PNG files are
+rasterized copies for README renderer compatibility. These materials and
+the official introduction remain subject to their original rights; they
+are not covered by the plugin code MIT license.
