@@ -14,7 +14,8 @@ for key in ('displayName', 'description', 'readme'):
     assert 'zh_CN' not in manifest[key], 'Use BCP 47 language tags'
 files = [
     'index.js', 'index.css', 'style.css', 'plugin.json',
-    'LICENSE', 'THIRD_PARTY_NOTICES.md', 'assets/misans-wordmark.png',
+    'LICENSE', 'THIRD_PARTY_NOTICES.md',
+    'licenses/MiSans-License-Agreement.pdf', 'assets/misans-wordmark.png',
     'MiSans-Regular.woff', 'MiSans-Bold.woff',
     *manifest['readme'].values(), manifest['icon'], manifest['preview'],
 ]

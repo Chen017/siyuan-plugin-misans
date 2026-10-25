@@ -16,6 +16,8 @@ Official downloads and terms: https://hyperos.mi.com/font/zh/
 
 These files are not relicensed under MIT. Official license agreement:
 https://hyperos.mi.com/font-download/MiSans字体知识产权许可协议.pdf
+The complete agreement is included in
+`licenses/MiSans-License-Agreement.pdf` and in the published plugin package.
 The historical repository did not preserve the original download archive
 or conversion history. No font files were changed by this update.
 

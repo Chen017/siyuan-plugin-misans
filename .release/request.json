@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "tag": "v1.0.0",
   "remove_releases": [],
-  "revision": 5,
-  "notes_only": true
+  "revision": 6,
+  "notes_only": false,
+  "refresh_tag_from": "edf8b39dbe58220f790c20dfa413b87b5e078b23"
 }
