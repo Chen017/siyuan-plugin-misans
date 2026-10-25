@@ -2,7 +2,7 @@
   "name": "siyuan-ttf-MiSans_SC-and-Twemoji",
   "author": "Chen017",
   "url": "https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji",
-  "version": "1.2.5",
+  "version": "1.0.0",
   "minAppVersion": "3.2.0",
   "backends": [
     "all"
@@ -12,12 +12,12 @@
   ],
   "disabledInPublish": false,
   "displayName": {
-    "default": "MiSans and Twemoji",
-    "zh-CN": "MiSans 和 Twemoji"
+    "default": "MiSans",
+    "zh-CN": "MiSans 字体"
   },
   "description": {
-    "default": "Use bundled MiSans Regular/Bold and Twemoji fonts in SiYuan.",
-    "zh-CN": "为思源笔记提供内置 MiSans 常规、粗体字体和 Twemoji 表情字体。"
+    "default": "Use bundled MiSans Regular and Bold text fonts in SiYuan.",
+    "zh-CN": "为思源笔记提供内置 MiSans 常规和粗体文字字体。"
   },
   "readme": {
     "default": "README.md",
@@ -26,10 +26,8 @@
   "keywords": [
     "font",
     "MiSans",
-    "Twemoji",
     "字体",
-    "小米",
-    "表情符号"
+    "小米"
   ],
   "icon": "icon.png",
   "preview": "preview.png"

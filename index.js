@@ -24,7 +24,7 @@ module.exports = class MiSansPlugin extends Plugin {
                 ]);
             }
         } catch (error) {
-            if (!controller.signal.aborted) console.error("MiSans and Twemoji:", error);
+            if (!controller.signal.aborted) console.error("MiSans:", error);
         }
     }
 

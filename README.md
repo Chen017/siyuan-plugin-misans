@@ -1,26 +1,27 @@
-# MiSans and Twemoji
+# MiSans
 
 English | [简体中文](README_zh_CN.md)
 
-Bundled MiSans Regular/Bold and Twemoji fonts for SiYuan. Enabling the plugin applies fonts to the interface and editor; disabling it removes its styles. Font loading requires no external network requests.
+Bundled MiSans Regular and Bold text fonts for SiYuan. Enabling the plugin applies fonts to the interface and editor; disabling it removes its styles. Font loading requires no external network requests.
+
+In version 1.0.0, Twemoji is removed: no emoji font is bundled and SiYuan's emoji font setting is left unchanged. Emoji use the existing SiYuan or system rendering. The repository and package name are retained for update compatibility.
 
 ## Requirements and installation
 
 - SiYuan 3.2.0 or later; desktop, mobile and browser frontends.
 - This plugin has not been submitted to the marketplace. For manual installation, extract `package.zip` into `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/` in your workspace, with `plugin.json` directly inside that directory. Enable it from the marketplace's Downloaded tab.
-- Other global font/emoji plugins, CSS snippets, themes and font settings may conflict.
+- Other global text font plugins, CSS snippets, themes and font settings may conflict.
 - Only Regular and Bold are bundled; italics are synthesized by the browser. Missing glyphs use system fallback fonts; full Traditional Chinese or other language coverage is not guaranteed.
-- PDF export retains the upstream `snippetCSS` mechanism. Font embedding and emoji rendering need verification in target clients.
+- PDF export retains the upstream `snippetCSS` mechanism. Font embedding needs verification in target clients.
 
 ## Fonts and licensing
 
 - **MiSans**: `MiSans-Regular.woff` and `MiSans-Bold.woff`, both internally identified as **4.009**. Copyright belongs to Beijing Xiaomi Mobile Software Co., Ltd. and the respective rights holders; the name tables credit Xiaomi and Hanyi. See the [official site](https://hyperos.mi.com/font/zh/) and [official repository](https://github.com/xiaomi-fonts/MiSans). Existing WOFF files are retained without glyph changes. The original download archive and conversion history are not recorded; supply the official license matching these files and provenance before a formal release.
-- **Twemoji**: font version **16.0.1**; copyright Twitter, Inc and other contributors. The font declares [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The previous README identifies this [font mirror](https://mirror.whynothugo.nl/twemoji.ttf/) as its source; upstream artwork is maintained at [jdecked/twemoji](https://github.com/jdecked/twemoji). Font bytes are unchanged in this update.
 - Plugin code uses the [MIT License](LICENSE). Bundled fonts have separate terms; see [third-party notices](THIRD_PARTY_NOTICES.md). This is a community project.
 
 ## Acknowledgments
 
-Based on **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing HarmonyOS Sans with MiSans and retaining its font injection and PDF export approach. Thanks to TCOTC for the original implementation; the original MIT copyright notice is preserved.
+Based on **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**, replacing HarmonyOS Sans with MiSans, removing Twemoji functionality and retaining its font injection and PDF export approach. Thanks to TCOTC for the original implementation; the original MIT copyright notice is preserved.
 
 Also thanks to the upstream references:
 
