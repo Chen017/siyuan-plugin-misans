@@ -1,23 +1,19 @@
 ## MiSans for SiYuan · 1.0.0
 
-为思源笔记提供 MiSans 常规与粗体文字字体。需要 **思源 3.8.4 或以上**。
+**让思源笔记的界面与正文，使用 MiSans。**
 
-### 本版内容
+MiSans 是小米推出的字体，以简约清晰、人文易读的设计，为不同语言与文字带来协调的阅读体验。
 
-- 统一仓库与插件包名为 `siyuan-plugin-misans`，保留思源和系统原有的表情显示。
-- 适配新版思源的全局、编辑器字体栈与字重处理。
-- 修复字体预加载阻塞启动，增加样式请求超时与停用清理。
-- 声明发布服务所需的样式及字体资源。
-- 更新中英文 README，图标采用用户提供的官网截图中的英文 MiSans 字标，preview 改用用户提供的 MiSans SVG 素材。
+本插件内置 **MiSans 常规与粗体**，应用于思源笔记的界面和正文。字体随插件提供，无需从外部字体网站加载。
 
 ### 安装
 
-下载下方 **package.zip**，解压至工作空间的 `data/plugins/siyuan-plugin-misans/`，确保 `plugin.json` 直接位于该目录下，然后在思源集市的「已下载」页面启用插件。不要将 Source code 压缩包作为安装包。
+适用于 **思源笔记 3.8.4 及以上版本**。
 
-从旧版升级时，先停用并备份旧目录，再移除旧插件目录，安装到新的 `data/plugins/siyuan-plugin-misans/` 目录，避免两份插件同时生效。版本为 1.0.0。
+下载下方的 **`package.zip`**，解压到工作空间的 `data/plugins/siyuan-plugin-misans/`，确保 `plugin.json` 直接位于该目录下，然后在思源「设置 → 集市 → 已下载 → 插件」中启用。
 
-### 验证与声明
+[了解 MiSans](https://github.com/Chen017/siyuan-plugin-misans/blob/main/README_zh_CN.md) · [MiSans 官方网站](https://hyperos.mi.com/font/zh/)
 
-6 项生命周期测试、JavaScript 语法检查和打包完整性检查通过；各客户端视觉效果与 PDF 导出仍需实测。
+### 致谢
 
-本插件由社区维护，基于 TCOTC 的鸿蒙字体插件修改，保留原 MIT 版权声明。使用 MiSans 字体及字标不代表获得小米、汉仪或思源官方背书。字体与字标遵循其独立许可，详见仓库第三方声明。本次仅发布 GitHub Release，未提交思源集市。
+感谢小米、蒙纳字库与汉仪字库带来的 MiSans Global 字体家族。本插件基于 [TCOTC 的鸿蒙字体插件](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)修改，由 Chen017 社区维护。

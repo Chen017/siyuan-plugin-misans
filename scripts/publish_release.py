@@ -22,6 +22,12 @@ commit = os.environ['GITHUB_SHA']
 def gh(*args):
     return subprocess.run(['gh', *args, '--repo', repo], check=True, text=True, capture_output=True).stdout
 
+# Editorial changes must not replace assets or move the source tag.
+if request.get('notes_only'):
+    gh('release', 'edit', tag, '--notes-file', '.release/notes.md')
+    print('Updated release description:', tag)
+    raise SystemExit(0)
+
 # Re-running this request is safe: update the same release rather than creating duplicates.
 existing = subprocess.run(['gh', 'release', 'view', tag, '--repo', repo, '--json', 'tagName'], capture_output=True)
 if existing.returncode:
