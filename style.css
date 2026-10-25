@@ -1,14 +1,14 @@
 /* 基础字体 */
 @font-face {
   font-family: "MiSans";
-  src: url('../plugins/siyuan-ttf-MiSans_SC-and-Twemoji/MiSans-Regular.woff') format('woff');
+  src: url('__PLUGIN_BASE__MiSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "MiSans";
-  src: url('../plugins/siyuan-ttf-MiSans_SC-and-Twemoji/MiSans-Bold.woff') format('woff');
+  src: url('__PLUGIN_BASE__MiSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 /* Twemoji */
 @font-face {
   font-family: "Twemoji";
-  src: url("../plugins/siyuan-ttf-MiSans_SC-and-Twemoji/Twemoji/Twemoji-16.0.1.ttf") format("truetype");
+  src: url("__PLUGIN_BASE__Twemoji/Twemoji-16.0.1.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,6 +28,7 @@
   --b3-font-family-emoji: "Twemoji", "Emojis Additional", emojis !important;
 }
 
+:root:lang(zh-CN),
 :root:lang(zh_CN) {
   --b3-font-family: "MiSans", "Twemoji", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis !important;
 }

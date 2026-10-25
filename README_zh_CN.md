@@ -1,18 +1,35 @@
-> 近期更新：小米字体从 v1.9 升级到 v2.400，Twemoji 从 15.1.0 升级到 v16.0.1
+# MiSans 和 Twemoji
 
-# 小米黑体(简)和 Twemoji
+[English](README.md) | 简体中文
 
-小米字体文件来自：[小米系统设计资源](https://developer.huawei.com/consumer/cn/design/resource/)/[开发者文档](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001828772001)，由 .ttf 格式[转换](https://cloudconvert.com/ttf-to-woff)为 .woff 格式
+为思源笔记提供内置 MiSans 常规、粗体字体和 Twemoji 表情字体。启用后应用于界面和编辑器，停用后移除插件样式。字体随插件打包，运行时无需从外部网站下载。
 
-Twemoji 字体文件来自：[jdecked/twemoji](https://github.com/jdecked/twemoji)：https://mirror.whynothugo.nl/twemoji.ttf/
+## 环境与使用
 
-### 注意
+- 思源笔记 3.2.0 及以上；支持桌面端、移动端及浏览器前端。
+- 当前未提交思源集市。手动安装时，将 `package.zip` 解压到工作空间的 `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/`，确保 `plugin.json` 直接位于该目录下，再从集市的「已下载」页面启用。
+- 使用时建议停用其他会覆盖全局字体或 Emoji 的插件、CSS 片段。主题和自定义字体设置也可能影响显示效果。
+- 仅内置常规和粗体；斜体由浏览器合成。未覆盖的字符依赖系统后备字体，不保证所有繁体字或语言字形齐全。
+- PDF 导出沿用原插件的 `snippetCSS` 机制；实际字体嵌入和 Emoji 显示效果需在目标客户端验证。
 
-- 本插件可能与集市中的其他字体或 Emoji 插件不兼容，使用本插件时请禁用其他字体或 Emoji 插件。
-- 不包含繁体中文字形，因为小米字体的繁体不完整
+## 字体来源与许可
 
-### 鸣谢
+- **MiSans**：内置 `MiSans-Regular.woff` 和 `MiSans-Bold.woff`；字体内部版本均为 **4.009**。版权归北京小米移动软件有限公司等权利人所有，设计信息见字体内部记录（小米、汉仪）。官方资源：[MiSans](https://hyperos.mi.com/font/zh/)、[官方字体仓库](https://github.com/xiaomi-fonts/MiSans)。保留现有 WOFF 文件，未修改字形；原始下载包与转换过程未在仓库中记录，正式分发前需补齐与该版本对应的官方许可文件及来源记录。
+- **Twemoji**：内置字体版本 **16.0.1**，版权记录为 Twitter, Inc and other contributors，字体内声明使用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。原仓库记录的字体来源为 [字体镜像](https://mirror.whynothugo.nl/twemoji.ttf/)，上游图形项目为 [jdecked/twemoji](https://github.com/jdecked/twemoji)。本次未修改字体文件。
+- 插件代码使用 [MIT License](LICENSE)，字体资源不适用代码的 MIT 许可。详见 [第三方声明](THIRD_PARTY_NOTICES.md)。本项目由社区维护。
 
-帖子：[思源笔记手机端和电脑端使用同一字体 - 链滴](https://ld246.com/article/1705399357823)
+## 致谢
 
-仓库：[zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)
+本插件基于 **[TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji](https://github.com/TCOTC/siyuan-ttf-HarmonyOS_Sans_SC-and-Twemoji)**（鸿蒙黑体和 Twemoji）修改，将文本字体替换为 MiSans，并沿用其字体注入和 PDF 导出支持思路。感谢 TCOTC 的原始实现，保留其 MIT 版权声明。
+
+同时感谢原插件参考的：
+
+- [zuoez02/siyuan-plugin-twitter-emoji](https://github.com/zuoez02/siyuan-plugin-twitter-emoji)
+- [思源笔记手机端和电脑端使用同一字体 - 链滴](https://ld246.com/article/1705399357823)
+- [思源官方插件示例与开发规范](https://github.com/siyuan-note/plugin-sample)
+
+## 打包与后续发布
+
+运行 `python3 scripts/package.py` 生成根目录可直接安装的 `package.zip`。GitHub Actions 在推送、PR 或手动运行时检查并上传构建产物，**不会自动创建 Release 或提交集市**。
+
+正式发布前补齐上述 MiSans 授权材料，并实测桌面端、移动端、浏览器和 PDF 导出。然后创建与 `plugin.json` 版本一致的 GitHub Release 并附上 `package.zip`。首次上架还需按[官方规范](https://github.com/siyuan-note/bazaar#submitting-a-bazaar-package)单独提交集市申请；本次不执行。

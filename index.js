@@ -1,44 +1,45 @@
-module.exports = class F extends require('siyuan').Plugin {
-    t = 'MiSans and Twemoji: ';
-    s = document.createElement('style');
+const { Plugin } = require("siyuan");
 
-    onload() {
-        fetch('../plugins/' + this.name + '/style.css')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to load CSS file`);
-                }
-                return response.text();
-            })
-            .then(css => {
-                this.s.id = 'snippetCSS-' + this.name; // id 以 snippetCSS 开头的 style 会被添加到导出 PDF 中 https://github.com/siyuan-note/siyuan/commit/4318aa446369eaf4ea85982ba4919b5d47340552 https://github.com/siyuan-note/siyuan/commit/0361599aba79a200c410aa9de5873da4a52b2667
-                this.s.textContent = css;
-                document.head.appendChild(this.s);
+module.exports = class MiSansPlugin extends Plugin {
+    async onload() {
+        this.cleanup();
+        const controller = new AbortController();
+        this.controller = controller;
+        const base = `/plugins/${encodeURIComponent(this.name)}/`;
+        try {
+            const response = await fetch(`${base}style.css`, { signal: controller.signal });
+            if (!response.ok) throw new Error(`Failed to load style.css: ${response.status}`);
+            const css = await response.text();
+            if (controller.signal.aborted || this.controller !== controller) return;
+            const style = document.createElement("style");
+            // SiYuan includes snippetCSS styles in PDF exports.
+            style.id = `snippetCSS-${this.name}`;
+            style.textContent = css.replaceAll("__PLUGIN_BASE__", base);
+            this.style = style;
+            document.head.appendChild(style);
+            if (document.fonts?.load) {
+                await Promise.allSettled([
+                    document.fonts.load('400 16px "MiSans"'),
+                    document.fonts.load('700 16px "MiSans"'),
+                ]);
+            }
+        } catch (error) {
+            if (!controller.signal.aborted) console.error("MiSans and Twemoji:", error);
+        }
+    }
 
-                setTimeout(() => {
-                    if (!document.fonts || typeof document.fonts.load !== 'function') return;
-                    try {
-                        // 预加载 MiSans 的四种变体
-                        document.fonts.load('400 16px "MiSans"', '1');
-                        document.fonts.load('700 16px "MiSans"', '2');
-                        document.fonts.load('italic 400 16px "MiSans"', '3');
-                        document.fonts.load('italic 700 16px "MiSans"', '4');
-                    } catch (_) {}
-                    console.log(this.t + 'loaded');
-                }, 0);
-            })
-            .catch(error => {
-                console.error(this.t + error);
-            });
+    cleanup() {
+        this.controller?.abort();
+        this.controller = undefined;
+        this.style?.remove();
+        this.style = undefined;
     }
 
     onunload() {
-        this.s?.remove();
-        console.log(this.t + 'unloaded');
+        this.cleanup();
     }
 
     uninstall() {
-        this.s?.remove();
-        console.log(this.t + 'uninstall');
+        this.cleanup();
     }
-}
+};

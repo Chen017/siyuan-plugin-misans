@@ -1,26 +1,36 @@
 {
   "name": "siyuan-ttf-MiSans_SC-and-Twemoji",
-  "author": "TCOTC",
-  "url": "https://github.com/TCOTC/siyuan-ttf-MiSans_SC-and-Twemoji",
-  "version": "1.2.4",
+  "author": "Chen017",
+  "url": "https://github.com/Chen017/siyuan-ttf-MiSans_SC-and-Twemoji",
+  "version": "1.2.5",
   "minAppVersion": "3.2.0",
-  "backends": ["all"],
-  "frontends": ["all"],
+  "backends": [
+    "all"
+  ],
+  "frontends": [
+    "all"
+  ],
   "disabledInPublish": false,
   "displayName": {
     "default": "MiSans and Twemoji",
-    "zh_CN": "小米字体(简)和 Twemoji"
+    "zh-CN": "MiSans 和 Twemoji"
   },
   "description": {
-    "default": "MiSans & Twemoji",
-    "zh_CN": "MiSans SC & Twemoji"
+    "default": "Use bundled MiSans Regular/Bold and Twemoji fonts in SiYuan.",
+    "zh-CN": "为思源笔记提供内置 MiSans 常规、粗体字体和 Twemoji 表情字体。"
   },
   "readme": {
     "default": "README.md",
-    "zh_CN": "README_zh_CN.md"
+    "zh-CN": "README_zh_CN.md"
   },
-  "funding": {
-    "custom": ["https://bento.me/jeffff"]
-  },
-  "keywords": ["font","Twitter Emoji","小米字体","表情包","表情符号","图标","icon"]
+  "keywords": [
+    "font",
+    "MiSans",
+    "Twemoji",
+    "字体",
+    "小米",
+    "表情符号"
+  ],
+  "icon": "icon.png",
+  "preview": "preview.png"
 }

@@ -1,27 +1,28 @@
-name: Create package.zip 3
-on: 
-  push: 
-    tags:
-      - "*"
+name: Validate and package
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  build:
+  package:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@0.7.1
-      with:
-        type: 'zip'
-        filename: 'package.zip'
-        exclusions: '*.git* /*LICENSE /*Backup/*'
-
-    - name: Upload Release
-      uses: ncipollo/release-action@v1
-      with:
-        allowUpdates: true
-        prerelease: true
-        artifactErrorsFailBuild: true
-        removeArtifacts: false
-        replacesArtifacts: false
-        artifacts: "package.zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript
+        run: node --check index.js
+      - name: Validate and package runtime resources
+        run: python3 scripts/package.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: siyuan-misans-package
+          path: package.zip
+          if-no-files-found: error
