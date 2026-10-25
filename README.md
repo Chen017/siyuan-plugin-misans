@@ -8,11 +8,18 @@ In version 1.0.0, Twemoji is removed: no emoji font is bundled and SiYuan's emoj
 
 ## Requirements and installation
 
-- SiYuan 3.2.0 or later; desktop, mobile and browser frontends.
+- SiYuan 3.8.4 or later; desktop, mobile and browser frontends.
 - This plugin has not been submitted to the marketplace. For manual installation, extract `package.zip` into `data/plugins/siyuan-ttf-MiSans_SC-and-Twemoji/` in your workspace, with `plugin.json` directly inside that directory. Enable it from the marketplace's Downloaded tab.
 - Other global text font plugins, CSS snippets, themes and font settings may conflict.
 - Only Regular and Bold are bundled; italics are synthesized by the browser. Missing glyphs use system fallback fonts; full Traditional Chinese or other language coverage is not guaranteed.
 - PDF export retains the upstream `snippetCSS` mechanism. Font embedding needs verification in target clients.
+
+## Compatibility with current SiYuan
+
+- Overrides the separate global/editor font stacks to prioritize MiSans. Normal text starts at weight 400; bold text and table cell weight inheritance remain intact. SiYuan retains control of code and emoji font settings.
+- Stylesheet and font resources are declared for publishing. Enable this plugin in the publishing service to make them available to visitors.
+- Fonts preload in the background without blocking startup; stylesheet loading is canceled on timeout or disablement.
+- Reviewed against SiYuan 3.8.8 and upstream plugin 2.3.1. Client rendering and PDF output still require manual verification.
 
 ## Fonts and licensing
 

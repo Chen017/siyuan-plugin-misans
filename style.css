@@ -14,15 +14,27 @@
   font-display: swap;
 }
 
+/* SiYuan 3.8.2+ uses independent default/editor font stacks.
+   Keep the host's emoji reset stack and leave emoji/code font settings alone. */
 :root {
-  --b3-font-family: "MiSans", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
+  --misans-font-stack: "MiSans", var(--b3-font-family-emoji-reset, "Emojis Additional"), BlinkMacSystemFont, Helvetica, "PingFang SC", "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", "DejaVu Sans", Arial, sans-serif;
+  --b3-font-family-default: var(--misans-font-stack) !important;
+  --b3-font-family-editor: var(--misans-font-stack) !important;
+  --b3-font-family-protyle: var(--misans-font-stack) !important;
+  --b3-font-family: var(--misans-font-stack) !important;
 }
 
-:root:lang(zh-CN),
-:root:lang(zh_CN) {
-  --b3-font-family: "MiSans", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "PingFang SC", "Luxi Sans", "DejaVu Sans", arial, "Microsoft Yahei", "Hiragino Sans GB", "Source Han Sans SC", sans-serif, emojis !important;
+/* Only Regular and Bold are bundled: normal text must start at 400.
+   Descendant bold text and headings keep their own semantic weights. */
+body, button, input, select, textarea {
+  font-weight: 400 !important;
+}
+.b3-typography:not(.b3-typography--default), .protyle-wysiwyg, .protyle-title {
+  font-weight: 400 !important;
 }
 
-:root:lang(ar_SA) {
-  --b3-font-family: "MiSans", "Emojis Additional", "Emojis Reset", BlinkMacSystemFont, Helvetica, "Luxi Sans", "DejaVu Sans", arial, sans-serif, emojis !important;
+/* Nested table editors must inherit th/td weights, including bold headers.
+   Match the upstream fix from 2026-10-20. */
+.table__cell-rich, .table__cell-editor .protyle-wysiwyg {
+  font-weight: inherit !important;
 }

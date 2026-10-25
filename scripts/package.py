@@ -20,6 +20,8 @@ files = [
 ]
 for filename in files:
     assert (ROOT / filename).is_file(), f'Missing file: {filename}'
+for filename in manifest['publish']['resources']:
+    assert filename in files, f'Unpackaged publish resource: {filename}'
 css = (ROOT / 'style.css').read_text(encoding='utf-8')
 for filename in re.findall(r'__PLUGIN_BASE__([^\s\'"()]+)', css):
     assert filename in files, f'Unpackaged font: {filename}'
